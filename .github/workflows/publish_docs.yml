@@ -1,0 +1,46 @@
+name: Publish Docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Install DocFX Tool
+        run: dotnet tool install -g docfx
+
+      - name: Generate and Build Payment Docs
+        working-directory: ./Payment
+        run: |
+          docfx metadata
+          docfx build -o ../docs_site/Payment
+
+      - name: Generate and Build ATM Docs
+        working-directory: ./ATM
+        run: |
+          docfx metadata
+          docfx build -o ../docs_site/ATM
+
+      - name: Generate and Build Comportamiento Docs
+        working-directory: ./Comportamiento
+        run: |
+          docfx metadata
+          docfx build -o ../docs_site/Comportamiento
+
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_PACKAGES_TOKEN }}
+          publish_dir: ./docs_site
