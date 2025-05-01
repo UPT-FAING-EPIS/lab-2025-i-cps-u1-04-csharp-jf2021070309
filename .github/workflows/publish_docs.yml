@@ -37,6 +37,11 @@ jobs:
       - name: Save index.html from main branch
         run: cp index.html /tmp/index.html
 
+      - name: Clean working directory before switching branches
+        run: |
+          git reset --hard
+          git clean -fdX
+
       # 6. Cambiar a la rama gh-pages
       - name: Checkout gh-pages branch
         run: |
