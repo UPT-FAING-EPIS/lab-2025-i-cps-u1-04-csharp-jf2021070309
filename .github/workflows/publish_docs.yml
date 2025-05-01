@@ -1,35 +1,67 @@
-name: Publish Docs
+name: Publish Documentation
 
 on:
   push:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
-  publish-docs:
+  build-and-deploy-docs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      # 1. Checkout del repositorio
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v3
+      # 2. Configurar .NET 9.0 SDK
+      - name: Setup .NET 9.0 SDK
+        uses: actions/setup-dotnet@v4
         with:
-          ref: gh-pages  
+          dotnet-version: '9.0.x'
 
-      - name: Prepare Docs Directory
+      # 3. Instalar DocFX
+      - name: Install DocFX
+        run: dotnet tool install -g docfx
+
+      # 4. Construir documentación
+      - name: Build documentation
         run: |
-          # Copiar los archivos generados a la raíz de gh-pages
+          docfx Payment/docfx.json
+          docfx ATM/docfx.json
+          docfx Comportamiento/docfx.json
+
+      # 5. Guardar el index.html de la rama main
+      - name: Save index.html from main branch
+        run: cp index.html /tmp/index.html
+
+      # 6. Cambiar a la rama gh-pages
+      - name: Checkout gh-pages branch
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+          git fetch origin gh-pages
+          git checkout gh-pages
+
+      # 7. Limpiar contenido anterior y copiar nueva documentación
+      - name: Copy built docs and index.html
+        run: |
+          rm -rf Payment ATM Comportamiento index.html
+
+          mkdir -p Payment ATM Comportamiento
+
           cp -r Payment/_site/* Payment/
           cp -r ATM/_site/* ATM/
           cp -r Comportamiento/_site/* Comportamiento/
 
-      - name: Copy main index.html to gh-pages
-        run: cp index.html ./index.html
+          cp /tmp/index.html .
 
-      - name: Publish to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GH_PACKAGES_TOKEN }}
-          publish_dir: .  
+      # 8. Commit y push
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "Actualizar documentación desde rama main" || echo "Sin cambios para commitear"
+          git push origin gh-pages
