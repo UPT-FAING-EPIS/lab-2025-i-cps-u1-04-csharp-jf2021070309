@@ -1,0 +1,93 @@
+name: Crear y Publicar Release Automático
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write  # Necesario para crear tags y releases
+      packages: write  # Necesario para publicar paquetes
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Configurar .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.x'
+
+      # Restaurar dependencias - Payment
+      - name: Restaurar dependencias - Payment
+        run: dotnet restore Payment/Payment.Domain
+
+      # Restaurar dependencias - ATM
+      - name: Restaurar dependencias - ATM
+        run: dotnet restore ATM/ATM.Domain
+
+      # Restaurar dependencias - Comportamiento
+      - name: Restaurar dependencias - Comportamiento
+        run: dotnet restore Comportamiento/Comportamiento.Domain
+
+      # Compilar - Payment
+      - name: Compilar - Payment
+        run: dotnet build Payment/Payment.Domain --configuration Release --no-restore
+
+      # Compilar - ATM
+      - name: Compilar - ATM
+        run: dotnet build ATM/ATM.Domain --configuration Release --no-restore
+
+      # Compilar - Comportamiento
+      - name: Compilar - Comportamiento
+        run: dotnet build Comportamiento/Comportamiento.Domain --configuration Release --no-restore
+
+      # Empaquetar - Payment
+      - name: Empaquetar - Payment
+        run: |
+          mkdir -p Payment/Payment.Domain/nupkg
+          VERSION=1.0.${{ github.run_number }}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          dotnet pack Payment/Payment.Domain --no-build --configuration Release \
+            -p:PackageVersion=$VERSION \
+            -o Payment/Payment.Domain/nupkg
+
+      # Empaquetar - ATM
+      - name: Empaquetar - ATM
+        run: |
+          mkdir -p ATM/ATM.Domain/nupkg
+          dotnet pack ATM/ATM.Domain --no-build --configuration Release \
+            -p:PackageVersion=${{ env.VERSION }} \
+            -o ATM/ATM.Domain/nupkg
+
+      # Empaquetar - Comportamiento
+      - name: Empaquetar - Comportamiento
+        run: |
+          mkdir -p Comportamiento/Comportamiento.Domain/nupkg
+          dotnet pack Comportamiento/Comportamiento.Domain --no-build --configuration Release \
+            -p:PackageVersion=${{ env.VERSION }} \
+            -o Comportamiento/Comportamiento.Domain/nupkg
+
+      # Crear tag automáticamente
+      - name: Crear tag automáticamente
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git fetch origin
+          git tag v${{ env.VERSION }}
+          git push origin v${{ env.VERSION }}
+
+      # Crear Release en GitHub
+      - name: Crear Release en GitHub
+        uses: softprops/action-gh-release@v1
+        with:
+          name: "Versión v${{ env.VERSION }}"
+          tag_name: v${{ env.VERSION }}
+          files: |
+            Payment/Payment.Domain/nupkg/*.nupkg
+            ATM/ATM.Domain/nupkg/*.nupkg
+            Comportamiento/Comportamiento.Domain/nupkg/*.nupkg
