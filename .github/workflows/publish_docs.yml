@@ -13,6 +13,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages  
+
       - name: Prepare Docs Directory
         run: |
           # Copiar los archivos generados a la raíz de gh-pages
@@ -20,11 +25,11 @@ jobs:
           cp -r ATM/_site/* ATM/
           cp -r Comportamiento/_site/* Comportamiento/
 
-      - name: Copy main index.html
+      - name: Copy main index.html to gh-pages
         run: cp index.html ./index.html
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_PACKAGES_TOKEN }}
-          publish_dir: ./
+          publish_dir: .  
