@@ -1,0 +1,177 @@
+name: Publicar Paquete NuGet Notifications y CustomerApp
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: '9.x'
+  SONAR_ORG: 'jaimeflores'
+
+jobs:
+  publicar-packages:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+    - name: Descargar código
+      uses: actions/checkout@v4
+
+    - name: Configurar .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Restaurar dependencias
+      run: |
+        dotnet restore Payment/Payment.sln
+        dotnet restore ATM/ATM.sln
+        dotnet restore Comportamiento/Comportamiento.sln
+
+    - name: Limpiar soluciones
+      run: |
+        dotnet clean Payment/Payment.sln --configuration Release
+        dotnet clean ATM/ATM.sln --configuration Release
+        dotnet clean Comportamiento/Comportamiento.sln --configuration Release
+
+    - name: Instalar SonarScanner
+      run: dotnet tool install --global dotnet-sonarscanner
+
+    # ---------------- ANALISIS Payment ----------------
+    - name: Iniciar análisis Payment con SonarCloud
+      run: |
+        export PATH="$PATH:$HOME/.dotnet/tools"
+        cd Payment
+        dotnet-sonarscanner begin \
+          /k:"jaimeflores_payment" \
+          /o:"${{ env.SONAR_ORG }}" \
+          /d:sonar.host.url="https://sonarcloud.io" \
+          /d:sonar.login="${{ secrets.TOKEN_SONAR_25 }}"
+
+    - name: Compilar Payment
+      run: |
+        cd Payment
+        dotnet build Payment.sln --configuration Release --no-restore
+
+    - name: Ejecutar pruebas Payment
+      run: |
+        cd Payment
+        dotnet test Payment.sln --no-build --configuration Release --logger "trx;LogFileName=test_results.trx"
+
+    - name: Finalizar análisis Payment
+      run: |
+        cd Payment
+        dotnet-sonarscanner end \
+          /d:sonar.login="${{ secrets.TOKEN_SONAR_25 }}"
+
+    # ---------------- ANALISIS ATM ----------------
+    - name: Iniciar análisis ATM con SonarCloud
+      run: |
+        export PATH="$PATH:$HOME/.dotnet/tools"
+        cd ATM
+        dotnet-sonarscanner begin \
+          /k:"jaimeflores_atm" \
+          /o:"${{ env.SONAR_ORG }}" \
+          /d:sonar.host.url="https://sonarcloud.io" \
+          /d:sonar.login="${{ secrets.TOKEN_SONAR_25 }}"
+
+    - name: Compilar ATM
+      run: |
+        cd ATM
+        dotnet build ATM.sln --configuration Release --no-restore
+
+    - name: Ejecutar pruebas ATM
+      run: |
+        cd ATM
+        dotnet test ATM.sln --no-build --configuration Release --logger "trx;LogFileName=test_results.trx"
+
+    - name: Finalizar análisis ATM
+      run: |
+        cd ATM
+        dotnet-sonarscanner end \
+          /d:sonar.login="${{ secrets.TOKEN_SONAR_25 }}"
+
+    # ---------------- ANALISIS Comportamiento ----------------
+    - name: Iniciar análisis Comportamiento con SonarCloud
+      run: |
+        export PATH="$PATH:$HOME/.dotnet/tools"
+        cd Comportamiento
+        dotnet-sonarscanner begin \
+          /k:"jaimeflores_comportamiento" \
+          /o:"${{ env.SONAR_ORG }}" \
+          /d:sonar.host.url="https://sonarcloud.io" \
+          /d:sonar.login="${{ secrets.TOKEN_SONAR_25 }}"
+
+    - name: Compilar Comportamiento
+      run: |
+        cd Comportamiento
+        dotnet build Comportamiento.sln --configuration Release --no-restore
+
+    - name: Ejecutar pruebas Comportamiento
+      run: |
+        cd Comportamiento
+        dotnet test Comportamiento.sln --no-build --configuration Release --logger "trx;LogFileName=test_results.trx"
+
+    - name: Finalizar análisis Comportamiento
+      run: |
+        cd Comportamiento
+        dotnet-sonarscanner end \
+          /d:sonar.login="${{ secrets.TOKEN_SONAR_25 }}"
+
+    # ---------------- Empaquetado NuGet ----------------
+    - name: Crear carpetas para .nupkg
+      run: |
+        mkdir -p Payment/Payment.Domain/nupkg
+        mkdir -p ATM/ATM.Domain/nupkg
+        mkdir -p Comportamiento/Comportamiento.Domain/nupkg
+
+    - name: Empaquetar Payment.Domain
+      run: |
+        cd Payment/Payment.Domain
+        dotnet pack --no-build --configuration Release -p:PackageVersion=1.0.${{ github.run_number }} -o ./nupkg
+
+    - name: Empaquetar ATM.Domain
+      run: |
+        cd ATM/ATM.Domain
+        dotnet pack --no-build --configuration Release -p:PackageVersion=1.0.${{ github.run_number }} -o ./nupkg
+
+    - name: Empaquetar Comportamiento.Domain
+      run: |
+        cd Comportamiento/Comportamiento.Domain
+        dotnet pack --no-build --configuration Release -p:PackageVersion=1.0.${{ github.run_number }} -o ./nupkg
+
+    # ---------------- Publicar en GitHub Packages ----------------
+    - name: Configurar NuGet para GitHub Packages
+      run: |
+        dotnet nuget add source https://nuget.pkg.github.com/jf2021070309/index.json \
+          --name "github" \
+          --username "jf2021070309" \
+          --password "${{ secrets.GH_PACKAGES_TOKEN }}" \
+          --store-password-in-clear-text
+
+    - name: Publicar paquete Payment
+      run: |
+        cd Payment/Payment.Domain
+        dotnet nuget push "./nupkg/*.nupkg" \
+          --source "github" \
+          --api-key "${{ secrets.GH_PACKAGES_TOKEN }}" \
+          --skip-duplicate
+
+    - name: Publicar paquete ATM
+      run: |
+        cd ATM/ATM.Domain
+        dotnet nuget push "./nupkg/*.nupkg" \
+          --source "github" \
+          --api-key "${{ secrets.GH_PACKAGES_TOKEN }}" \
+          --skip-duplicate
+
+    - name: Publicar paquete Comportamiento
+      run: |
+        cd Comportamiento/Comportamiento.Domain
+        dotnet nuget push "./nupkg/*.nupkg" \
+          --source "github" \
+          --api-key "${{ secrets.GH_PACKAGES_TOKEN }}" \
+          --skip-duplicate
