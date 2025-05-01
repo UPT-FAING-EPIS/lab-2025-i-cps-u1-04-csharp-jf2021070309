@@ -1,0 +1,20 @@
+{
+  "Comportamiento.Domain": "Comportamiento.Domain.yml",
+  "Comportamiento.Domain.CashPaymentStrategy": "Comportamiento.Domain.CashPaymentStrategy.yml",
+  "Comportamiento.Domain.CashPaymentStrategy.Pay(System.Double)": "Comportamiento.Domain.CashPaymentStrategy.yml",
+  "Comportamiento.Domain.CreditCardPaymentStrategy": "Comportamiento.Domain.CreditCardPaymentStrategy.yml",
+  "Comportamiento.Domain.CreditCardPaymentStrategy.Pay(System.Double)": "Comportamiento.Domain.CreditCardPaymentStrategy.yml",
+  "Comportamiento.Domain.DebitCardPaymentStrategy": "Comportamiento.Domain.DebitCardPaymentStrategy.yml",
+  "Comportamiento.Domain.DebitCardPaymentStrategy.Pay(System.Double)": "Comportamiento.Domain.DebitCardPaymentStrategy.yml",
+  "Comportamiento.Domain.IPaymentStrategy": "Comportamiento.Domain.IPaymentStrategy.yml",
+  "Comportamiento.Domain.IPaymentStrategy.Pay(System.Double)": "Comportamiento.Domain.IPaymentStrategy.yml",
+  "Comportamiento.Domain.PaymentContext": "Comportamiento.Domain.PaymentContext.yml",
+  "Comportamiento.Domain.PaymentContext.ProcessPayment(System.Double)": "Comportamiento.Domain.PaymentContext.yml",
+  "Comportamiento.Domain.PaymentContext.SetPaymentStrategy(Comportamiento.Domain.IPaymentStrategy)": "Comportamiento.Domain.PaymentContext.yml",
+  "Comportamiento.Tests": "Comportamiento.Tests.yml",
+  "Comportamiento.Tests.PaymentTests": "Comportamiento.Tests.PaymentTests.yml",
+  "Comportamiento.Tests.PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(System.Int32,System.Double)": "Comportamiento.Tests.PaymentTests.yml",
+  "Comportamiento.Tests.PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)": "Comportamiento.Tests.PaymentTests.yml",
+  "Comportamiento.Tests.PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)": "Comportamiento.Tests.PaymentTests.yml",
+  "Comportamiento.Tests.PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)": "Comportamiento.Tests.PaymentTests.yml"
+}

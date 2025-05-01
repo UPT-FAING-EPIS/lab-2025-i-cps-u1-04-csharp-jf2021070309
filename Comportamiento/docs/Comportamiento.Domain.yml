@@ -1,0 +1,74 @@
+### YamlMime:ManagedReference
+items:
+- uid: Comportamiento.Domain
+  commentId: N:Comportamiento.Domain
+  id: Comportamiento.Domain
+  children:
+  - Comportamiento.Domain.CashPaymentStrategy
+  - Comportamiento.Domain.CreditCardPaymentStrategy
+  - Comportamiento.Domain.DebitCardPaymentStrategy
+  - Comportamiento.Domain.IPaymentStrategy
+  - Comportamiento.Domain.PaymentContext
+  langs:
+  - csharp
+  - vb
+  name: Comportamiento.Domain
+  nameWithType: Comportamiento.Domain
+  fullName: Comportamiento.Domain
+  type: Namespace
+  assemblies:
+  - Comportamiento.Domain
+references:
+- uid: Comportamiento.Domain.CashPaymentStrategy
+  commentId: T:Comportamiento.Domain.CashPaymentStrategy
+  href: Comportamiento.Domain.CashPaymentStrategy.html
+  name: CashPaymentStrategy
+  nameWithType: CashPaymentStrategy
+  fullName: Comportamiento.Domain.CashPaymentStrategy
+- uid: Comportamiento.Domain.CreditCardPaymentStrategy
+  commentId: T:Comportamiento.Domain.CreditCardPaymentStrategy
+  href: Comportamiento.Domain.CreditCardPaymentStrategy.html
+  name: CreditCardPaymentStrategy
+  nameWithType: CreditCardPaymentStrategy
+  fullName: Comportamiento.Domain.CreditCardPaymentStrategy
+- uid: Comportamiento.Domain.DebitCardPaymentStrategy
+  commentId: T:Comportamiento.Domain.DebitCardPaymentStrategy
+  href: Comportamiento.Domain.DebitCardPaymentStrategy.html
+  name: DebitCardPaymentStrategy
+  nameWithType: DebitCardPaymentStrategy
+  fullName: Comportamiento.Domain.DebitCardPaymentStrategy
+- uid: Comportamiento.Domain.IPaymentStrategy
+  commentId: T:Comportamiento.Domain.IPaymentStrategy
+  parent: Comportamiento.Domain
+  href: Comportamiento.Domain.IPaymentStrategy.html
+  name: IPaymentStrategy
+  nameWithType: IPaymentStrategy
+  fullName: Comportamiento.Domain.IPaymentStrategy
+- uid: Comportamiento.Domain.PaymentContext
+  commentId: T:Comportamiento.Domain.PaymentContext
+  href: Comportamiento.Domain.PaymentContext.html
+  name: PaymentContext
+  nameWithType: PaymentContext
+  fullName: Comportamiento.Domain.PaymentContext
+- uid: Comportamiento.Domain
+  commentId: N:Comportamiento.Domain
+  href: Comportamiento.html
+  name: Comportamiento.Domain
+  nameWithType: Comportamiento.Domain
+  fullName: Comportamiento.Domain
+  spec.csharp:
+  - uid: Comportamiento
+    name: Comportamiento
+    href: Comportamiento.html
+  - name: .
+  - uid: Comportamiento.Domain
+    name: Domain
+    href: Comportamiento.Domain.html
+  spec.vb:
+  - uid: Comportamiento
+    name: Comportamiento
+    href: Comportamiento.html
+  - name: .
+  - uid: Comportamiento.Domain
+    name: Domain
+    href: Comportamiento.Domain.html

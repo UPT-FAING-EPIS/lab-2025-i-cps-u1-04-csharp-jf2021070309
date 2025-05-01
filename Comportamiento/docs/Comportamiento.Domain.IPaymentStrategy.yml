@@ -1,0 +1,161 @@
+### YamlMime:ManagedReference
+items:
+- uid: Comportamiento.Domain.IPaymentStrategy
+  commentId: T:Comportamiento.Domain.IPaymentStrategy
+  id: IPaymentStrategy
+  parent: Comportamiento.Domain
+  children:
+  - Comportamiento.Domain.IPaymentStrategy.Pay(System.Double)
+  langs:
+  - csharp
+  - vb
+  name: IPaymentStrategy
+  nameWithType: IPaymentStrategy
+  fullName: Comportamiento.Domain.IPaymentStrategy
+  type: Interface
+  source:
+    remote:
+      path: Comportamiento/Comportamiento.Domain/IPaymentStrategy.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-i-cps-u1-04-csharp-jf2021070309.git
+    id: IPaymentStrategy
+    path: Comportamiento.Domain/IPaymentStrategy.cs
+    startLine: 7
+  assemblies:
+  - Comportamiento.Domain
+  namespace: Comportamiento.Domain
+  summary: >-
+    Interfaz que define el contrato para las estrategias de pago.
+
+    Cualquier clase que implemente esta interfaz debe proporcionar una implementación
+
+    para el método <xref href="Comportamiento.Domain.IPaymentStrategy.Pay(System.Double)" data-throw-if-not-resolved="false"></xref> que permite realizar un pago.
+  example: []
+  syntax:
+    content: public interface IPaymentStrategy
+    content.vb: Public Interface IPaymentStrategy
+- uid: Comportamiento.Domain.IPaymentStrategy.Pay(System.Double)
+  commentId: M:Comportamiento.Domain.IPaymentStrategy.Pay(System.Double)
+  id: Pay(System.Double)
+  parent: Comportamiento.Domain.IPaymentStrategy
+  langs:
+  - csharp
+  - vb
+  name: Pay(double)
+  nameWithType: IPaymentStrategy.Pay(double)
+  fullName: Comportamiento.Domain.IPaymentStrategy.Pay(double)
+  type: Method
+  source:
+    remote:
+      path: Comportamiento/Comportamiento.Domain/IPaymentStrategy.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-i-cps-u1-04-csharp-jf2021070309.git
+    id: Pay
+    path: Comportamiento.Domain/IPaymentStrategy.cs
+    startLine: 15
+  assemblies:
+  - Comportamiento.Domain
+  namespace: Comportamiento.Domain
+  summary: >-
+    Método que define cómo se realiza un pago utilizando una estrategia concreta.
+
+    Este método debe ser implementado por todas las clases que implementen
+
+    la interfaz <xref href="Comportamiento.Domain.IPaymentStrategy" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: void Pay(double amount)
+    parameters:
+    - id: amount
+      type: System.Double
+      description: El monto que el cliente desea pagar.
+    content.vb: Sub Pay(amount As Double)
+  overload: Comportamiento.Domain.IPaymentStrategy.Pay*
+  nameWithType.vb: IPaymentStrategy.Pay(Double)
+  fullName.vb: Comportamiento.Domain.IPaymentStrategy.Pay(Double)
+  name.vb: Pay(Double)
+references:
+- uid: Comportamiento.Domain.IPaymentStrategy.Pay(System.Double)
+  commentId: M:Comportamiento.Domain.IPaymentStrategy.Pay(System.Double)
+  parent: Comportamiento.Domain.IPaymentStrategy
+  isExternal: true
+  href: Comportamiento.Domain.IPaymentStrategy.html#Comportamiento_Domain_IPaymentStrategy_Pay_System_Double_
+  name: Pay(double)
+  nameWithType: IPaymentStrategy.Pay(double)
+  fullName: Comportamiento.Domain.IPaymentStrategy.Pay(double)
+  nameWithType.vb: IPaymentStrategy.Pay(Double)
+  fullName.vb: Comportamiento.Domain.IPaymentStrategy.Pay(Double)
+  name.vb: Pay(Double)
+  spec.csharp:
+  - uid: Comportamiento.Domain.IPaymentStrategy.Pay(System.Double)
+    name: Pay
+    href: Comportamiento.Domain.IPaymentStrategy.html#Comportamiento_Domain_IPaymentStrategy_Pay_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: Comportamiento.Domain.IPaymentStrategy.Pay(System.Double)
+    name: Pay
+    href: Comportamiento.Domain.IPaymentStrategy.html#Comportamiento_Domain_IPaymentStrategy_Pay_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: Comportamiento.Domain
+  commentId: N:Comportamiento.Domain
+  href: Comportamiento.html
+  name: Comportamiento.Domain
+  nameWithType: Comportamiento.Domain
+  fullName: Comportamiento.Domain
+  spec.csharp:
+  - uid: Comportamiento
+    name: Comportamiento
+    href: Comportamiento.html
+  - name: .
+  - uid: Comportamiento.Domain
+    name: Domain
+    href: Comportamiento.Domain.html
+  spec.vb:
+  - uid: Comportamiento
+    name: Comportamiento
+    href: Comportamiento.html
+  - name: .
+  - uid: Comportamiento.Domain
+    name: Domain
+    href: Comportamiento.Domain.html
+- uid: Comportamiento.Domain.IPaymentStrategy
+  commentId: T:Comportamiento.Domain.IPaymentStrategy
+  parent: Comportamiento.Domain
+  href: Comportamiento.Domain.IPaymentStrategy.html
+  name: IPaymentStrategy
+  nameWithType: IPaymentStrategy
+  fullName: Comportamiento.Domain.IPaymentStrategy
+- uid: Comportamiento.Domain.IPaymentStrategy.Pay*
+  commentId: Overload:Comportamiento.Domain.IPaymentStrategy.Pay
+  href: Comportamiento.Domain.IPaymentStrategy.html#Comportamiento_Domain_IPaymentStrategy_Pay_System_Double_
+  name: Pay
+  nameWithType: IPaymentStrategy.Pay
+  fullName: Comportamiento.Domain.IPaymentStrategy.Pay
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

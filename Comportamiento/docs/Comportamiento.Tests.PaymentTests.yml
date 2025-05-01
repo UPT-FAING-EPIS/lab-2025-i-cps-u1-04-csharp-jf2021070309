@@ -1,0 +1,540 @@
+### YamlMime:ManagedReference
+items:
+- uid: Comportamiento.Tests.PaymentTests
+  commentId: T:Comportamiento.Tests.PaymentTests
+  id: PaymentTests
+  parent: Comportamiento.Tests
+  children:
+  - Comportamiento.Tests.PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(System.Int32,System.Double)
+  - Comportamiento.Tests.PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)
+  - Comportamiento.Tests.PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)
+  - Comportamiento.Tests.PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)
+  langs:
+  - csharp
+  - vb
+  name: PaymentTests
+  nameWithType: PaymentTests
+  fullName: Comportamiento.Tests.PaymentTests
+  type: Class
+  source:
+    remote:
+      path: Comportamiento/Comportamiento.Domain.Tests/PaymentTests.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-i-cps-u1-04-csharp-jf2021070309.git
+    id: PaymentTests
+    path: Comportamiento.Domain.Tests/PaymentTests.cs
+    startLine: 5
+  assemblies:
+  - Comportamiento.Domain.Tests
+  namespace: Comportamiento.Tests
+  syntax:
+    content: public class PaymentTests
+    content.vb: Public Class PaymentTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Comportamiento.Tests.PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)
+  commentId: M:Comportamiento.Tests.PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)
+  id: GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)
+  parent: Comportamiento.Tests.PaymentTests
+  langs:
+  - csharp
+  - vb
+  name: GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(int, double)
+  nameWithType: PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(int, double)
+  fullName: Comportamiento.Tests.PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(int, double)
+  type: Method
+  source:
+    remote:
+      path: Comportamiento/Comportamiento.Domain.Tests/PaymentTests.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-i-cps-u1-04-csharp-jf2021070309.git
+    id: GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed
+    path: Comportamiento.Domain.Tests/PaymentTests.cs
+    startLine: 8
+  assemblies:
+  - Comportamiento.Domain.Tests
+  namespace: Comportamiento.Tests
+  syntax:
+    content: >-
+      [TestCase(1, 1000)]
+
+      public void GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(int paymentType, double amount)
+    parameters:
+    - id: paymentType
+      type: System.Int32
+    - id: amount
+      type: System.Double
+    content.vb: >-
+      <TestCase(1, 1000)>
+
+      Public Sub GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(paymentType As Integer, amount As Double)
+  overload: Comportamiento.Tests.PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed*
+  attributes:
+  - type: NUnit.Framework.TestCaseAttribute
+    ctor: NUnit.Framework.TestCaseAttribute.#ctor(System.Object,System.Object)
+    arguments:
+    - type: System.Int32
+      value: 1
+    - type: System.Int32
+      value: 1000
+  nameWithType.vb: PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(Integer, Double)
+  fullName.vb: Comportamiento.Tests.PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(Integer, Double)
+  name.vb: GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed(Integer, Double)
+- uid: Comportamiento.Tests.PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)
+  commentId: M:Comportamiento.Tests.PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)
+  id: GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)
+  parent: Comportamiento.Tests.PaymentTests
+  langs:
+  - csharp
+  - vb
+  name: GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(int, double)
+  nameWithType: PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(int, double)
+  fullName: Comportamiento.Tests.PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(int, double)
+  type: Method
+  source:
+    remote:
+      path: Comportamiento/Comportamiento.Domain.Tests/PaymentTests.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-i-cps-u1-04-csharp-jf2021070309.git
+    id: GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed
+    path: Comportamiento.Domain.Tests/PaymentTests.cs
+    startLine: 20
+  assemblies:
+  - Comportamiento.Domain.Tests
+  namespace: Comportamiento.Tests
+  syntax:
+    content: >-
+      [TestCase(2, 2000)]
+
+      public void GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(int paymentType, double amount)
+    parameters:
+    - id: paymentType
+      type: System.Int32
+    - id: amount
+      type: System.Double
+    content.vb: >-
+      <TestCase(2, 2000)>
+
+      Public Sub GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(paymentType As Integer, amount As Double)
+  overload: Comportamiento.Tests.PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed*
+  attributes:
+  - type: NUnit.Framework.TestCaseAttribute
+    ctor: NUnit.Framework.TestCaseAttribute.#ctor(System.Object,System.Object)
+    arguments:
+    - type: System.Int32
+      value: 2
+    - type: System.Int32
+      value: 2000
+  nameWithType.vb: PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(Integer, Double)
+  fullName.vb: Comportamiento.Tests.PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(Integer, Double)
+  name.vb: GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(Integer, Double)
+- uid: Comportamiento.Tests.PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)
+  commentId: M:Comportamiento.Tests.PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)
+  id: GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(System.Int32,System.Double)
+  parent: Comportamiento.Tests.PaymentTests
+  langs:
+  - csharp
+  - vb
+  name: GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(int, double)
+  nameWithType: PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(int, double)
+  fullName: Comportamiento.Tests.PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(int, double)
+  type: Method
+  source:
+    remote:
+      path: Comportamiento/Comportamiento.Domain.Tests/PaymentTests.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-i-cps-u1-04-csharp-jf2021070309.git
+    id: GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed
+    path: Comportamiento.Domain.Tests/PaymentTests.cs
+    startLine: 32
+  assemblies:
+  - Comportamiento.Domain.Tests
+  namespace: Comportamiento.Tests
+  syntax:
+    content: >-
+      [TestCase(3, 3000)]
+
+      public void GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(int paymentType, double amount)
+    parameters:
+    - id: paymentType
+      type: System.Int32
+    - id: amount
+      type: System.Double
+    content.vb: >-
+      <TestCase(3, 3000)>
+
+      Public Sub GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(paymentType As Integer, amount As Double)
+  overload: Comportamiento.Tests.PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed*
+  attributes:
+  - type: NUnit.Framework.TestCaseAttribute
+    ctor: NUnit.Framework.TestCaseAttribute.#ctor(System.Object,System.Object)
+    arguments:
+    - type: System.Int32
+      value: 3
+    - type: System.Int32
+      value: 3000
+  nameWithType.vb: PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(Integer, Double)
+  fullName.vb: Comportamiento.Tests.PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(Integer, Double)
+  name.vb: GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed(Integer, Double)
+- uid: Comportamiento.Tests.PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(System.Int32,System.Double)
+  commentId: M:Comportamiento.Tests.PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(System.Int32,System.Double)
+  id: GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(System.Int32,System.Double)
+  parent: Comportamiento.Tests.PaymentTests
+  langs:
+  - csharp
+  - vb
+  name: GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(int, double)
+  nameWithType: PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(int, double)
+  fullName: Comportamiento.Tests.PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(int, double)
+  type: Method
+  source:
+    remote:
+      path: Comportamiento/Comportamiento.Domain.Tests/PaymentTests.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-i-cps-u1-04-csharp-jf2021070309.git
+    id: GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException
+    path: Comportamiento.Domain.Tests/PaymentTests.cs
+    startLine: 44
+  assemblies:
+  - Comportamiento.Domain.Tests
+  namespace: Comportamiento.Tests
+  syntax:
+    content: >-
+      [TestCase(4, 4000)]
+
+      public void GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(int paymentType, double amount)
+    parameters:
+    - id: paymentType
+      type: System.Int32
+    - id: amount
+      type: System.Double
+    content.vb: >-
+      <TestCase(4, 4000)>
+
+      Public Sub GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(paymentType As Integer, amount As Double)
+  overload: Comportamiento.Tests.PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException*
+  attributes:
+  - type: NUnit.Framework.TestCaseAttribute
+    ctor: NUnit.Framework.TestCaseAttribute.#ctor(System.Object,System.Object)
+    arguments:
+    - type: System.Int32
+      value: 4
+    - type: System.Int32
+      value: 4000
+  nameWithType.vb: PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(Integer, Double)
+  fullName.vb: Comportamiento.Tests.PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(Integer, Double)
+  name.vb: GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException(Integer, Double)
+references:
+- uid: Comportamiento.Tests
+  commentId: N:Comportamiento.Tests
+  href: Comportamiento.html
+  name: Comportamiento.Tests
+  nameWithType: Comportamiento.Tests
+  fullName: Comportamiento.Tests
+  spec.csharp:
+  - uid: Comportamiento
+    name: Comportamiento
+    href: Comportamiento.html
+  - name: .
+  - uid: Comportamiento.Tests
+    name: Tests
+    href: Comportamiento.Tests.html
+  spec.vb:
+  - uid: Comportamiento
+    name: Comportamiento
+    href: Comportamiento.html
+  - name: .
+  - uid: Comportamiento.Tests
+    name: Tests
+    href: Comportamiento.Tests.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Comportamiento.Tests.PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed*
+  commentId: Overload:Comportamiento.Tests.PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed
+  href: Comportamiento.Tests.PaymentTests.html#Comportamiento_Tests_PaymentTests_GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed_System_Int32_System_Double_
+  name: GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed
+  nameWithType: PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed
+  fullName: Comportamiento.Tests.PaymentTests.GivenCashPayment_WhenProcessPayment_ThenPaymentIsProcessed
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: Comportamiento.Tests.PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed*
+  commentId: Overload:Comportamiento.Tests.PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed
+  href: Comportamiento.Tests.PaymentTests.html#Comportamiento_Tests_PaymentTests_GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed_System_Int32_System_Double_
+  name: GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed
+  nameWithType: PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed
+  fullName: Comportamiento.Tests.PaymentTests.GivenCreditCardPayment_WhenProcessPayment_ThenPaymentIsProcessed
+- uid: Comportamiento.Tests.PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed*
+  commentId: Overload:Comportamiento.Tests.PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed
+  href: Comportamiento.Tests.PaymentTests.html#Comportamiento_Tests_PaymentTests_GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed_System_Int32_System_Double_
+  name: GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed
+  nameWithType: PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed
+  fullName: Comportamiento.Tests.PaymentTests.GivenDebitCardPayment_WhenProcessPayment_ThenPaymentIsProcessed
+- uid: Comportamiento.Tests.PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException*
+  commentId: Overload:Comportamiento.Tests.PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException
+  href: Comportamiento.Tests.PaymentTests.html#Comportamiento_Tests_PaymentTests_GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException_System_Int32_System_Double_
+  name: GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException
+  nameWithType: PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException
+  fullName: Comportamiento.Tests.PaymentTests.GivenAnInvalidPaymentType_WhenProcessPayment_ThrowsArgumentException
