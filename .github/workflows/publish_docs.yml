@@ -30,10 +30,9 @@ jobs:
       # 4. Construir documentación
       - name: Build documentation
         run: |
-          docfx Payment/docfx.json
-          docfx ATM/docfx.json
-          docfx Comportamiento/docfx.json
-
+          docfx Payment/docfx.json -o temp_docs/Payment
+          docfx ATM/docfx.json -o temp_docs/ATM
+          docfx Comportamiento/docfx.json -o temp_docs/Comportamiento
       # 5. Guardar el index.html de la rama main
       - name: Save index.html from main branch
         run: cp index.html /tmp/index.html
