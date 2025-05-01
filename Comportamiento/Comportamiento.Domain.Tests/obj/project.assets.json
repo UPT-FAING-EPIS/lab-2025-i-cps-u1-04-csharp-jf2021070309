@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {
+    "net8.0": {
       "coverlet.collector/6.0.2": {
         "type": "package",
         "build": {
@@ -349,7 +349,7 @@
       },
       "Comportamiento.Domain/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v9.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/Comportamiento.Domain.dll": {}
         },
@@ -811,7 +811,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net9.0": [
+    "net8.0": [
       "Comportamiento.Domain >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.12.0",
       "NUnit >= 4.2.2",
@@ -842,15 +842,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net9.0"
+        "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {
             "D:\\Biblioteca\\Videos\\Patrones\\lab4\\lab-2025-i-cps-u1-04-csharp-jf2021070309\\Comportamiento\\Comportamiento.Domain\\Comportamiento.Domain.csproj": {
               "projectPath": "D:\\Biblioteca\\Videos\\Patrones\\lab4\\lab-2025-i-cps-u1-04-csharp-jf2021070309\\Comportamiento\\Comportamiento.Domain\\Comportamiento.Domain.csproj"
@@ -871,8 +871,8 @@
       "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
-      "net9.0": {
-        "targetAlias": "net9.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",

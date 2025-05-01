@@ -1,0 +1,12 @@
+D:\Biblioteca\Videos\Patrones\lab4\lab-2025-i-cps-u1-04-csharp-jf2021070309\Comportamiento\Comportamiento.Domain\bin\Debug\net8.0\Comportamiento.Domain.deps.json
+D:\Biblioteca\Videos\Patrones\lab4\lab-2025-i-cps-u1-04-csharp-jf2021070309\Comportamiento\Comportamiento.Domain\bin\Debug\net8.0\Comportamiento.Domain.dll
+D:\Biblioteca\Videos\Patrones\lab4\lab-2025-i-cps-u1-04-csharp-jf2021070309\Comportamiento\Comportamiento.Domain\bin\Debug\net8.0\Comportamiento.Domain.pdb
+D:\Biblioteca\Videos\Patrones\lab4\lab-2025-i-cps-u1-04-csharp-jf2021070309\Comportamiento\Comportamiento.Domain\obj\Debug\net8.0\Comportamiento.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Biblioteca\Videos\Patrones\lab4\lab-2025-i-cps-u1-04-csharp-jf2021070309\Comportamiento\Comportamiento.Domain\obj\Debug\net8.0\Comportamiento.Domain.AssemblyInfoInputs.cache
+D:\Biblioteca\Videos\Patrones\lab4\lab-2025-i-cps-u1-04-csharp-jf2021070309\Comportamiento\Comportamiento.Domain\obj\Debug\net8.0\Comportamiento.Domain.AssemblyInfo.cs
+D:\Biblioteca\Videos\Patrones\lab4\lab-2025-i-cps-u1-04-csharp-jf2021070309\Comportamiento\Comportamiento.Domain\obj\Debug\net8.0\Comportamiento.Domain.csproj.CoreCompileInputs.cache
+D:\Biblioteca\Videos\Patrones\lab4\lab-2025-i-cps-u1-04-csharp-jf2021070309\Comportamiento\Comportamiento.Domain\obj\Debug\net8.0\Comportamiento.Domain.sourcelink.json
+D:\Biblioteca\Videos\Patrones\lab4\lab-2025-i-cps-u1-04-csharp-jf2021070309\Comportamiento\Comportamiento.Domain\obj\Debug\net8.0\Comportamiento.Domain.dll
+D:\Biblioteca\Videos\Patrones\lab4\lab-2025-i-cps-u1-04-csharp-jf2021070309\Comportamiento\Comportamiento.Domain\obj\Debug\net8.0\refint\Comportamiento.Domain.dll
+D:\Biblioteca\Videos\Patrones\lab4\lab-2025-i-cps-u1-04-csharp-jf2021070309\Comportamiento\Comportamiento.Domain\obj\Debug\net8.0\Comportamiento.Domain.pdb
+D:\Biblioteca\Videos\Patrones\lab4\lab-2025-i-cps-u1-04-csharp-jf2021070309\Comportamiento\Comportamiento.Domain\obj\Debug\net8.0\ref\Comportamiento.Domain.dll
