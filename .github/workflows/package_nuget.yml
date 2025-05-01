@@ -1,4 +1,4 @@
-name: Publicar Paquete NuGet Notifications y CustomerApp
+name: Publicar Paquete NuGet Payment, ATM y Comportamiento
 
 on:
   push:
